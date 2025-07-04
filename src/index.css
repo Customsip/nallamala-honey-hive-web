@@ -1,14 +1,13 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 255 248 225;
+    --background: 255 248 225; /* Soft honey-cream */
     --foreground: 33 33 33;
 
-    --card: 237 237 237;
+    --card: 255 253 245;
     --card-foreground: 33 33 33;
 
     --popover: 255 255 255;
@@ -35,18 +34,16 @@
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-background: 255 250 240;
+    --sidebar-foreground: 33 33 33;
+    --sidebar-primary: 255 193 7;
+    --sidebar-primary-foreground: 33 33 33;
+    --sidebar-accent: 255 240 200;
+    --sidebar-accent-foreground: 33 33 33;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
@@ -64,7 +61,7 @@
   .honey-gradient {
     background: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%);
   }
-  
+
   .forest-gradient {
     background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
   }
