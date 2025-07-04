@@ -44,8 +44,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg"
-          : "bg-white/90 backdrop-blur-sm"
+          ? "bg-cream-white/95 backdrop-blur-md shadow-lg border-b border-honey-gold/20"
+          : "bg-cream-white/90 backdrop-blur-sm"
       }`}
     >
       <div className="container mx-auto px-4">
@@ -57,7 +57,7 @@ const Header = () => {
               <h1 className="font-playfair font-bold text-lg lg:text-xl text-forest-green group-hover:text-honey-gold transition-colors">
                 Nallamala Honeybee Park
               </h1>
-              <p className="text-xs text-muted-foreground hidden lg:block">
+              <p className="text-xs text-charcoal/70 hidden lg:block">
                 Pure Raw Honey from Andhra Pradesh
               </p>
             </div>
@@ -86,12 +86,12 @@ const Header = () => {
               </button>
               
               {showShopDropdown && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-honey-gold/20 py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-honey-gold/20 py-2 z-50 animate-fade-in">
                   {shopMenuItems.map((item) => (
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="block px-4 py-2 text-sm text-forest-green hover:bg-honey-cream hover:text-honey-gold transition-colors"
+                      className="block px-4 py-2 text-sm text-forest-green hover:bg-cream-beige hover:text-honey-gold transition-colors"
                     >
                       {item.name}
                     </Link>
@@ -114,10 +114,10 @@ const Header = () => {
 
             {/* Cart Icon */}
             <Link to="/cart" className="relative">
-              <Button variant="outline" size="sm" className="border-honey-gold text-forest-green hover:bg-honey-gold hover:text-white">
+              <Button variant="outline" size="sm" className="border-honey-gold text-forest-green hover:bg-honey-gold hover:text-charcoal transition-colors">
                 <ShoppingCart className="h-4 w-4" />
                 {itemCount > 0 && (
-                  <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-honey-gold text-forest-green text-xs">
+                  <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-honey-gold text-charcoal text-xs font-semibold">
                     {itemCount}
                   </Badge>
                 )}
@@ -128,10 +128,10 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <div className="lg:hidden flex items-center space-x-4">
             <Link to="/cart" className="relative">
-              <Button variant="outline" size="sm" className="border-honey-gold text-forest-green">
+              <Button variant="outline" size="sm" className="border-honey-gold text-forest-green hover:bg-honey-gold hover:text-charcoal">
                 <ShoppingCart className="h-4 w-4" />
                 {itemCount > 0 && (
-                  <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-honey-gold text-forest-green text-xs">
+                  <Badge className="absolute -top-2 -right-2 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-honey-gold text-charcoal text-xs font-semibold">
                     {itemCount}
                   </Badge>
                 )}
@@ -141,7 +141,7 @@ const Header = () => {
               variant="ghost"
               size="sm"
               onClick={() => setIsOpen(!isOpen)}
-              className="text-forest-green"
+              className="text-forest-green hover:text-honey-gold hover:bg-cream-beige"
             >
               {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
@@ -150,11 +150,11 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden bg-white border-t border-honey-gold/20 py-4 animate-slide-in">
+          <div className="lg:hidden bg-white border-t border-honey-gold/20 py-4 animate-slide-in shadow-lg">
             <nav className="flex flex-col space-y-4">
               <Link
                 to="/"
-                className="text-forest-green hover:text-honey-gold transition-colors px-4 py-2"
+                className="text-forest-green hover:text-honey-gold transition-colors px-4 py-2 hover:bg-cream-beige rounded"
                 onClick={() => setIsOpen(false)}
               >
                 Home
@@ -167,7 +167,7 @@ const Header = () => {
                     <Link
                       key={item.name}
                       to={item.href}
-                      className="block text-sm text-muted-foreground hover:text-honey-gold transition-colors"
+                      className="block text-sm text-charcoal/80 hover:text-honey-gold transition-colors py-1"
                       onClick={() => setIsOpen(false)}
                     >
                       {item.name}
@@ -180,7 +180,7 @@ const Header = () => {
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="text-forest-green hover:text-honey-gold transition-colors px-4 py-2"
+                  className="text-forest-green hover:text-honey-gold transition-colors px-4 py-2 hover:bg-cream-beige rounded"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}

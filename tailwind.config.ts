@@ -67,10 +67,11 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// New earthy color palette
+				// New professional honey brand color palette
 				honey: {
 					gold: '#FFC107',
 					light: '#FFD54F',
+					cream: '#FFF8E1',
 				},
 				forest: {
 					green: '#1B5E20',
