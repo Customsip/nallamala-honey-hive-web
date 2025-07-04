@@ -67,13 +67,22 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
+				// New earthy color palette
 				honey: {
 					gold: '#FFC107',
-					cream: '#FFF8E1',
+					light: '#FFD54F',
 				},
 				forest: {
 					green: '#1B5E20',
-				}
+					light: '#2E7D32',
+				},
+				cream: {
+					white: '#FFF8E1',
+					beige: '#F5F0E6',
+				},
+				charcoal: '#212121',
+				softGray: '#EDEDED',
+				warmBrown: '#5C4033',
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

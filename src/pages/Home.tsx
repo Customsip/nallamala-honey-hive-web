@@ -100,7 +100,7 @@ const Home = () => {
   };
 
   return (
-    <div className="pt-16 lg:pt-20">
+    <div className="pt-16 lg:pt-20 bg-cream-white">
       {/* Hero Slider */}
       <section className="relative h-[70vh] lg:h-[80vh] overflow-hidden">
         {slides.map((slide, index) => (
@@ -114,7 +114,7 @@ const Home = () => {
               className="absolute inset-0 bg-cover bg-center"
               style={{ backgroundImage: `url(${slide.image})` }}
             />
-            <div className="absolute inset-0 bg-black/40" />
+            <div className="absolute inset-0 bg-black/30" />
             <div className="relative h-full flex items-center justify-center text-center text-white px-4">
               <div className="max-w-4xl animate-fade-in">
                 <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-4">
@@ -125,7 +125,7 @@ const Home = () => {
                 </p>
                 <Button
                   size="lg"
-                  className="honey-gradient text-forest-green hover:scale-105 transition-transform font-semibold"
+                  className="honey-gradient text-charcoal hover:scale-105 transition-transform font-semibold border-0"
                   asChild
                 >
                   <Link to="/shop">{slide.cta}</Link>
@@ -138,13 +138,13 @@ const Home = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-charcoal p-2 rounded-full transition-colors shadow-lg"
         >
           <ChevronLeft className="h-6 w-6" />
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/30 text-white p-2 rounded-full transition-colors"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-charcoal p-2 rounded-full transition-colors shadow-lg"
         >
           <ChevronRight className="h-6 w-6" />
         </button>
@@ -156,7 +156,7 @@ const Home = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentSlide ? "bg-honey-gold" : "bg-white/50"
+                index === currentSlide ? "bg-honey-gold" : "bg-white/60"
               }`}
             />
           ))}
@@ -164,15 +164,15 @@ const Home = () => {
       </section>
 
       {/* Trust Badges */}
-      <section className="py-16 bg-honey-cream">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {trustBadges.map((badge, index) => (
               <div key={index} className="text-center animate-fade-in">
-                <div className="w-16 h-16 mx-auto mb-4 bg-honey-gold/10 rounded-full flex items-center justify-center">
-                  <badge.icon className="h-8 w-8 text-honey-gold" />
+                <div className="w-16 h-16 mx-auto mb-4 bg-cream-beige rounded-full flex items-center justify-center shadow-sm">
+                  <badge.icon className="h-8 w-8 text-forest-green" />
                 </div>
-                <h3 className="font-playfair font-semibold text-forest-green mb-2">
+                <h3 className="font-playfair font-semibold text-charcoal mb-2">
                   {badge.title}
                 </h3>
                 <p className="text-sm text-muted-foreground">{badge.desc}</p>
@@ -183,11 +183,11 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="py-16">
+      <section className="py-16 bg-cream-beige">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
-              <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-forest-green mb-6">
+              <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-charcoal mb-6">
                 From Our Hives to Your Home
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
@@ -201,7 +201,7 @@ const Home = () => {
               </p>
               <Button
                 size="lg"
-                className="honey-gradient text-forest-green hover:scale-105 transition-transform"
+                className="honey-gradient text-charcoal hover:scale-105 transition-transform border-0 shadow-md"
                 asChild
               >
                 <Link to="/about">Learn Our Story</Link>
@@ -219,9 +219,9 @@ const Home = () => {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 bg-honey-cream">
+      <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-center text-forest-green mb-12">
+          <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-center text-charcoal mb-12">
             How We Deliver Pure Honey
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -242,12 +242,12 @@ const Home = () => {
                 desc: "Packed with care and shipped fresh across India with free delivery"
               }
             ].map((process, index) => (
-              <Card key={index} className="border-honey-gold/20 hover:shadow-lg transition-shadow animate-fade-in">
+              <Card key={index} className="border-softGray hover:shadow-xl transition-shadow animate-fade-in bg-white">
                 <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 honey-gradient rounded-full flex items-center justify-center">
-                    <span className="text-2xl font-playfair font-bold text-forest-green">{process.step}</span>
+                  <div className="w-16 h-16 mx-auto mb-4 honey-gradient rounded-full flex items-center justify-center shadow-sm">
+                    <span className="text-2xl font-playfair font-bold text-charcoal">{process.step}</span>
                   </div>
-                  <h3 className="text-xl font-playfair font-semibold text-forest-green mb-3">
+                  <h3 className="text-xl font-playfair font-semibold text-charcoal mb-3">
                     {process.title}
                   </h3>
                   <p className="text-muted-foreground">{process.desc}</p>
@@ -259,14 +259,14 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16">
+      <section className="py-16 bg-cream-beige">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-center text-forest-green mb-12">
+          <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-center text-charcoal mb-12">
             What Our Customers Say
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="border-honey-gold/20 hover:shadow-lg transition-shadow animate-fade-in">
+              <Card key={index} className="border-softGray hover:shadow-lg transition-shadow animate-fade-in bg-white">
                 <CardContent className="p-6">
                   <div className="flex mb-3">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -277,7 +277,7 @@ const Home = () => {
                     "{testimonial.text}"
                   </p>
                   <div>
-                    <p className="font-semibold text-forest-green">{testimonial.name}</p>
+                    <p className="font-semibold text-charcoal">{testimonial.name}</p>
                     <p className="text-xs text-muted-foreground">{testimonial.location}</p>
                   </div>
                 </CardContent>
@@ -288,7 +288,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 forest-gradient text-white">
+      <section className="py-16 warm-brown-gradient text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl lg:text-4xl font-playfair font-bold mb-6">
             Ready to Taste Pure Honey?
@@ -299,7 +299,7 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="honey-gradient text-forest-green hover:scale-105 transition-transform font-semibold"
+              className="honey-gradient text-charcoal hover:scale-105 transition-transform font-semibold border-0 shadow-md"
               asChild
             >
               <Link to="/shop">Shop All Honey</Link>
@@ -307,7 +307,7 @@ const Home = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-forest-green"
+              className="border-white text-white hover:bg-white hover:text-charcoal shadow-md"
               asChild
             >
               <Link to="/contact">Visit Our Farm</Link>
@@ -318,25 +318,25 @@ const Home = () => {
 
       {/* Offer Popup */}
       {showOffer && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
-          <Card className="max-w-md w-full border-honey-gold animate-fade-in">
+        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50 p-4">
+          <Card className="max-w-md w-full border-honey-gold animate-fade-in bg-white shadow-2xl">
             <CardContent className="p-6 text-center">
               <div className="text-4xl mb-4">🎁</div>
-              <h3 className="text-xl font-playfair font-bold text-forest-green mb-3">
+              <h3 className="text-xl font-playfair font-bold text-charcoal mb-3">
                 Special Offer!
               </h3>
               <p className="text-muted-foreground mb-6">
                 Get 10% OFF your first honey order when you subscribe to our newsletter
               </p>
               <div className="space-y-3">
-                <Button className="w-full honey-gradient text-forest-green" asChild>
+                <Button className="w-full honey-gradient text-charcoal border-0 shadow-md" asChild>
                   <Link to="/shop" onClick={() => setShowOffer(false)}>
                     Claim Your Discount
                   </Link>
                 </Button>
                 <Button
                   variant="ghost"
-                  className="w-full text-muted-foreground"
+                  className="w-full text-muted-foreground hover:bg-softGray"
                   onClick={() => setShowOffer(false)}
                 >
                   Maybe Later
