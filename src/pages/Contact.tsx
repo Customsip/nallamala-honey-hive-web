@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { MapPin, Phone, Mail, Instagram, Facebook, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -83,21 +82,21 @@ const Contact = () => {
   ];
 
   return (
-    <div className="pt-16 lg:pt-20 min-h-screen">
+    <div className="pt-16 lg:pt-20 min-h-screen bg-cream-white">
       {/* Hero Section */}
-      <section className="py-12 bg-honey-cream">
+      <section className="py-12 bg-cream-beige">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl lg:text-5xl font-playfair font-bold text-forest-green mb-4">
             Contact Us
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-charcoal/70 max-w-2xl mx-auto">
             Get in touch with us for orders, farm visits, or beekeeping training programs
           </p>
         </div>
       </section>
 
       {/* Contact Information & Form */}
-      <section className="py-16">
+      <section className="py-16 bg-cream-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Information */}
@@ -106,7 +105,7 @@ const Contact = () => {
                 <h2 className="text-3xl font-playfair font-bold text-forest-green mb-6">
                   Get in Touch
                 </h2>
-                <p className="text-muted-foreground mb-8">
+                <p className="text-charcoal/70 mb-8">
                   We'd love to hear from you! Whether you have questions about our honey, 
                   want to visit our farm, or are interested in our training programs, 
                   we're here to help.
@@ -115,7 +114,7 @@ const Contact = () => {
 
               <div className="grid gap-6">
                 {contactInfo.map((info, index) => (
-                  <Card key={index} className="border-honey-gold/20 hover:shadow-md transition-shadow">
+                  <Card key={index} className="border-honey-gold/20 hover:shadow-md transition-shadow bg-white">
                     <CardContent className="p-6">
                       <div className="flex items-start space-x-4">
                         <div className="w-12 h-12 bg-honey-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
@@ -128,12 +127,12 @@ const Contact = () => {
                           {info.action ? (
                             <a
                               href={info.action}
-                              className="text-muted-foreground hover:text-honey-gold transition-colors"
+                              className="text-charcoal/70 hover:text-honey-gold transition-colors"
                             >
                               {info.value}
                             </a>
                           ) : (
-                            <p className="text-muted-foreground">{info.value}</p>
+                            <p className="text-charcoal/70">{info.value}</p>
                           )}
                         </div>
                       </div>
@@ -166,7 +165,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div>
-              <Card className="border-honey-gold/20">
+              <Card className="border-honey-gold/20 bg-white">
                 <CardHeader>
                   <CardTitle className="text-forest-green">Send us a Message</CardTitle>
                 </CardHeader>
@@ -206,7 +205,7 @@ const Contact = () => {
                     </div>
                     <Button
                       type="submit"
-                      className="w-full honey-gradient text-forest-green hover:scale-105 transition-transform"
+                      className="w-full honey-gradient text-charcoal hover:scale-105 transition-transform"
                     >
                       Send Message
                     </Button>
@@ -219,7 +218,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-16 bg-honey-cream">
+      <section className="py-16 bg-cream-beige">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-playfair font-bold text-center text-forest-green mb-8">
             Find Our Farm
@@ -238,7 +237,7 @@ const Contact = () => {
               />
             </div>
             <div className="mt-6 text-center">
-              <p className="text-muted-foreground">
+              <p className="text-charcoal/70">
                 <MapPin className="inline h-4 w-4 mr-1" />
                 F9XW+V89, The Highway, Balapanur, Andhra Pradesh 518112
               </p>

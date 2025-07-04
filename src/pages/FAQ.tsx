@@ -93,21 +93,21 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="pt-16 lg:pt-20 min-h-screen">
+    <div className="pt-16 lg:pt-20 min-h-screen bg-cream-white">
       {/* Hero Section */}
-      <section className="py-16 bg-honey-cream">
+      <section className="py-16 bg-cream-beige">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl lg:text-5xl font-playfair font-bold text-forest-green mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-charcoal/70 max-w-2xl mx-auto">
             Everything you need to know about our pure honey, delivery, and beekeeping practices
           </p>
         </div>
       </section>
 
       {/* FAQ Content */}
-      <section className="py-16">
+      <section className="py-16 bg-cream-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto space-y-8">
             {faqs.map((category, categoryIndex) => (
@@ -118,9 +118,9 @@ const FAQ = () => {
                 <div className="space-y-4">
                   {category.questions.map((faq, faqIndex) => (
                     <Collapsible key={faqIndex}>
-                      <Card className="border-honey-gold/20">
+                      <Card className="border-honey-gold/20 bg-white shadow-sm">
                         <CollapsibleTrigger className="w-full">
-                          <CardContent className="p-6 flex items-center justify-between hover:bg-honey-cream/50 transition-colors">
+                          <CardContent className="p-6 flex items-center justify-between hover:bg-cream-beige/30 transition-colors">
                             <h3 className="text-left font-semibold text-forest-green">
                               {faq.question}
                             </h3>
@@ -130,7 +130,7 @@ const FAQ = () => {
                         <CollapsibleContent>
                           <CardContent className="pt-0 px-6 pb-6">
                             <div className="border-t border-honey-gold/10 pt-4">
-                              <p className="text-muted-foreground leading-relaxed">
+                              <p className="text-charcoal/80 leading-relaxed">
                                 {faq.answer}
                               </p>
                             </div>
@@ -147,12 +147,12 @@ const FAQ = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 bg-honey-cream">
+      <section className="py-16 bg-cream-beige">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-playfair font-bold text-forest-green mb-6">
             Still Have Questions?
           </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-charcoal/70 mb-8 max-w-2xl mx-auto">
             Can't find the answer you're looking for? Our team is here to help! 
             Contact us directly and we'll get back to you quickly.
           </p>
@@ -167,7 +167,7 @@ const FAQ = () => {
             </a>
             <a
               href="mailto:NallamalaHoneyBeePark@gmail.com"
-              className="inline-flex items-center justify-center px-8 py-3 border-2 border-honey-gold text-forest-green hover:bg-honey-gold hover:text-white rounded-lg font-semibold transition-colors"
+              className="inline-flex items-center justify-center px-8 py-3 border-2 border-honey-gold text-forest-green hover:bg-honey-gold hover:text-charcoal rounded-lg font-semibold transition-colors"
             >
               Send Email
             </a>

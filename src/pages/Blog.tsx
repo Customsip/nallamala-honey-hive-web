@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { ArrowRight, Search, Calendar, Clock } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -72,38 +71,38 @@ const Blog = () => {
   const categories = ["All", "Health Benefits", "Process", "People", "Education", "Sustainability", "Quality"];
 
   return (
-    <div className="pt-16 lg:pt-20 min-h-screen">
+    <div className="pt-16 lg:pt-20 min-h-screen bg-cream-white">
       {/* Hero Section */}
-      <section className="py-16 bg-honey-cream">
+      <section className="py-16 bg-cream-beige">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl lg:text-5xl font-playfair font-bold text-forest-green mb-6">
             The Bee Blog
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-charcoal/70 max-w-2xl mx-auto mb-8">
             Insights, stories, and knowledge from our beekeeping journey in the Nallamala forest
           </p>
           
           {/* Search Bar */}
           <div className="max-w-md mx-auto relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-charcoal/50 h-4 w-4" />
             <Input
               type="text"
               placeholder="Search blog posts..."
-              className="pl-10 border-honey-gold/20"
+              className="pl-10 border-honey-gold/20 bg-white"
             />
           </div>
         </div>
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 border-b border-honey-gold/20">
+      <section className="py-8 border-b border-honey-gold/20 bg-cream-white">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap gap-4 justify-center">
             {categories.map((category) => (
               <Button
                 key={category}
                 variant="outline"
-                className="border-honey-gold/20 text-forest-green hover:bg-honey-gold hover:text-white"
+                className="border-honey-gold/20 text-forest-green hover:bg-honey-gold hover:text-charcoal bg-white"
               >
                 {category}
               </Button>
@@ -113,7 +112,7 @@ const Blog = () => {
       </section>
 
       {/* Featured Post */}
-      <section className="py-16">
+      <section className="py-16 bg-cream-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -122,10 +121,10 @@ const Blog = () => {
                 <h2 className="text-3xl lg:text-4xl font-playfair font-bold text-forest-green mb-4">
                   {blogPosts[0].title}
                 </h2>
-                <p className="text-muted-foreground mb-6 text-lg leading-relaxed">
+                <p className="text-charcoal/70 mb-6 text-lg leading-relaxed">
                   {blogPosts[0].excerpt}
                 </p>
-                <div className="flex items-center space-x-4 text-sm text-muted-foreground mb-6">
+                <div className="flex items-center space-x-4 text-sm text-charcoal/60 mb-6">
                   <div className="flex items-center">
                     <Calendar className="h-4 w-4 mr-1" />
                     {blogPosts[0].date}
@@ -136,7 +135,7 @@ const Blog = () => {
                   </div>
                 </div>
                 <Button
-                  className="honey-gradient text-forest-green hover:scale-105 transition-transform group"
+                  className="honey-gradient text-charcoal hover:scale-105 transition-transform group"
                   asChild
                 >
                   <Link to={`/blog/${blogPosts[0].id}`}>
@@ -158,14 +157,14 @@ const Blog = () => {
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-16 bg-honey-cream">
+      <section className="py-16 bg-cream-beige">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-playfair font-bold text-center text-forest-green mb-12">
             Latest Articles
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogPosts.slice(1).map((post) => (
-              <Card key={post.id} className="border-honey-gold/20 overflow-hidden group hover:shadow-lg transition-shadow">
+              <Card key={post.id} className="border-honey-gold/20 overflow-hidden group hover:shadow-lg transition-shadow bg-white">
                 <div className="aspect-video overflow-hidden">
                   <img
                     src={post.image}
@@ -229,7 +228,7 @@ const Blog = () => {
               placeholder="Enter your email"
               className="bg-white/10 border-white/20 text-white placeholder:text-white/70"
             />
-            <Button className="honey-gradient text-forest-green hover:scale-105 transition-transform whitespace-nowrap">
+            <Button className="honey-gradient text-charcoal hover:scale-105 transition-transform whitespace-nowrap">
               Subscribe
             </Button>
           </div>

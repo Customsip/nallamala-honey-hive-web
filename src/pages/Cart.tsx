@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Trash2, Plus, Minus, ShoppingBag } from "lucide-react";
@@ -75,19 +74,19 @@ const Cart = () => {
 
   if (items.length === 0) {
     return (
-      <div className="pt-16 lg:pt-20 min-h-screen">
+      <div className="pt-16 lg:pt-20 min-h-screen bg-cream-white">
         <div className="container mx-auto px-4 py-16">
           <div className="text-center max-w-md mx-auto">
-            <ShoppingBag className="h-24 w-24 mx-auto text-muted-foreground mb-6" />
+            <ShoppingBag className="h-24 w-24 mx-auto text-charcoal/40 mb-6" />
             <h1 className="text-3xl font-playfair font-bold text-forest-green mb-4">
               Your Cart is Empty
             </h1>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-charcoal/70 mb-8">
               Looks like you haven't added any honey to your cart yet. 
               Explore our premium honey collection!
             </p>
             <Button
-              className="honey-gradient text-forest-green hover:scale-105 transition-transform"
+              className="honey-gradient text-charcoal hover:scale-105 transition-transform"
               asChild
             >
               <Link to="/shop">Shop Now</Link>
@@ -99,7 +98,7 @@ const Cart = () => {
   }
 
   return (
-    <div className="pt-16 lg:pt-20 min-h-screen">
+    <div className="pt-16 lg:pt-20 min-h-screen bg-cream-white">
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-3xl lg:text-4xl font-playfair font-bold text-forest-green mb-8">
           Your Cart
@@ -108,13 +107,13 @@ const Cart = () => {
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Cart Items */}
           <div className="lg:col-span-2">
-            <Card className="border-honey-gold/20">
+            <Card className="border-honey-gold/20 bg-white">
               <CardHeader>
                 <CardTitle className="text-forest-green">Order Items</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {items.map((item) => (
-                  <div key={item.id} className="flex items-center space-x-4 p-4 border border-honey-gold/10 rounded-lg">
+                  <div key={item.id} className="flex items-center space-x-4 p-4 border border-honey-gold/10 rounded-lg bg-cream-beige/30">
                     <img
                       src={item.image}
                       alt={item.name}
@@ -165,7 +164,7 @@ const Cart = () => {
           {/* Order Summary & Customer Details */}
           <div className="space-y-6">
             {/* Customer Details */}
-            <Card className="border-honey-gold/20">
+            <Card className="border-honey-gold/20 bg-white">
               <CardHeader>
                 <CardTitle className="text-forest-green">Customer Details</CardTitle>
               </CardHeader>
@@ -217,7 +216,7 @@ const Cart = () => {
             </Card>
 
             {/* Order Summary */}
-            <Card className="border-honey-gold/20">
+            <Card className="border-honey-gold/20 bg-white">
               <CardHeader>
                 <CardTitle className="text-forest-green">Order Summary</CardTitle>
               </CardHeader>
@@ -241,12 +240,12 @@ const Cart = () => {
                   <span className="text-honey-gold">₹{getTotalPrice()}</span>
                 </div>
                 <Button
-                  className="w-full honey-gradient text-forest-green hover:scale-105 transition-transform font-semibold"
+                  className="w-full honey-gradient text-charcoal hover:scale-105 transition-transform font-semibold"
                   onClick={handleWhatsAppOrder}
                 >
                   Place Order via WhatsApp
                 </Button>
-                <p className="text-xs text-muted-foreground text-center">
+                <p className="text-xs text-charcoal/60 text-center">
                   You'll be redirected to WhatsApp to confirm your order
                 </p>
               </CardContent>
