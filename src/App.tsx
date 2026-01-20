@@ -6,6 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import BottomNavigation from "./components/BottomNavigation";
 import Home from "./pages/Home";
 import Shop from "./pages/Shop";
 import Gallery from "./pages/Gallery";
@@ -44,6 +45,7 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
           <FloatingWhatsApp />
+          <BottomNavigation />
         </div>
       </BrowserRouter>
     </TooltipProvider>
