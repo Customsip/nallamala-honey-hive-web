@@ -72,23 +72,22 @@ const Home = () => {
   return (
     <div className="pt-16 lg:pt-20 bg-cream-white">
       {/* Hero Banner - Full Edge-to-Edge */}
-      <section className="relative w-full overflow-hidden">
-        <div className="relative w-full h-[50vh] sm:h-[60vh] md:h-[70vh] lg:h-[80vh]">
+      <section className="relative w-full overflow-hidden bg-cream-white">
+        <div className="relative w-full">
           {heroImages.map((image, index) => (
             <div
               key={index}
-              className={`absolute inset-0 w-full h-full transition-opacity duration-700 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
+              className={`w-full transition-opacity duration-700 ${
+                index === currentSlide ? "block" : "hidden"
               }`}
             >
               <img
                 src={image}
                 alt={`Nallamala Honeybee Park Banner ${index + 1}`}
-                className="w-full h-full object-cover object-center"
+                className="w-full h-auto object-contain"
               />
             </div>
           ))}
-
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
