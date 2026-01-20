@@ -4,44 +4,14 @@ import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight, Star, Shield, Truck, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import heroBanner1 from "@/assets/hero-banner-1.png";
+import heroBanner2 from "@/assets/hero-banner-2.jpg";
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [showOffer, setShowOffer] = useState(false);
 
-  const slides = [
-    {
-      image: "https://images.unsplash.com/photo-1498936178812-4b2e558d2937",
-      title: "Pure Raw Honey from Nallamala Forest",
-      subtitle: "100% Natural • Lab Tested • Unprocessed",
-      cta: "Shop Now"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1472396961693-142e6e269027",
-      title: "Sustainable Beekeeping Practices",
-      subtitle: "Supporting Local Farmers • Protecting Nature",
-      cta: "Learn More"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07",
-      title: "Farm Fresh from Our Hives",
-      subtitle: "Direct from Balapanur • No Middlemen",
-      cta: "Visit Gallery"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1",
-      title: "Join Our Beekeeping Training",
-      subtitle: "Learn • Earn • Grow Your Business",
-      cta: "Get Started"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9",
-      title: "Premium Honey Varieties",
-      subtitle: "12+ Types • ₹650/kg • Free Shipping",
-      cta: "Browse All"
-    }
-  ];
+  const heroImages = [heroBanner1, heroBanner2];
 
   const trustBadges = [
     { icon: Shield, title: "100% Raw", desc: "Unprocessed & Natural" },
@@ -79,10 +49,10 @@ const Home = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [slides.length]);
+  }, [heroImages.length]);
 
   useEffect(() => {
     const offerTimer = setTimeout(() => {
@@ -92,74 +62,63 @@ const Home = () => {
   }, []);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+    setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length);
   };
 
   return (
     <div className="pt-16 lg:pt-20 bg-cream-white">
-      {/* Hero Slider */}
-      <section className="relative h-[70vh] lg:h-[80vh] overflow-hidden">
-        {slides.map((slide, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
-          >
+      {/* Hero Banner */}
+      <section className="relative w-full overflow-hidden bg-cream-white">
+        <div className="relative w-full">
+          {heroImages.map((image, index) => (
             <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${slide.image})` }}
-            />
-            <div className="absolute inset-0 bg-black/30" />
-            <div className="relative h-full flex items-center justify-center text-center text-white px-4">
-              <div className="max-w-4xl animate-fade-in">
-                <h1 className="text-4xl lg:text-6xl font-playfair font-bold mb-4">
-                  {slide.title}
-                </h1>
-                <p className="text-xl lg:text-2xl mb-8 opacity-90">
-                  {slide.subtitle}
-                </p>
-                <Button
-                  size="lg"
-                  className="honey-gradient text-charcoal hover:scale-105 transition-transform font-semibold border-0"
-                  asChild
-                >
-                  <Link to="/shop">{slide.cta}</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        ))}
-
-        {/* Navigation Arrows */}
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-charcoal p-2 rounded-full transition-colors shadow-lg"
-        >
-          <ChevronLeft className="h-6 w-6" />
-        </button>
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-charcoal p-2 rounded-full transition-colors shadow-lg"
-        >
-          <ChevronRight className="h-6 w-6" />
-        </button>
-
-        {/* Slide Indicators */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
-          {slides.map((_, index) => (
-            <button
               key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentSlide ? "bg-honey-gold" : "bg-white/60"
+              className={`w-full transition-opacity duration-700 ${
+                index === currentSlide ? "opacity-100 block" : "opacity-0 hidden"
               }`}
-            />
+            >
+              <img
+                src={image}
+                alt={`Nallamala Honeybee Park Banner ${index + 1}`}
+                className="w-full h-auto object-contain"
+                style={{ maxHeight: '80vh' }}
+              />
+            </div>
           ))}
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={prevSlide}
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-charcoal p-1.5 sm:p-2 rounded-full transition-colors shadow-lg z-10"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6" />
+          </button>
+          <button
+            onClick={nextSlide}
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-charcoal p-1.5 sm:p-2 rounded-full transition-colors shadow-lg z-10"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6" />
+          </button>
+
+          {/* Slide Indicators */}
+          <div className="absolute bottom-3 sm:bottom-6 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
+            {heroImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-colors shadow-md ${
+                  index === currentSlide ? "bg-honey-gold" : "bg-white/70"
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
